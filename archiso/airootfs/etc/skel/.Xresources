@@ -1,0 +1,128 @@
+! ------------------------------------------------------------------------------
+! URxvt standard arcolinux theme - Reload with xrdb -merge ~/.Xresources
+! or alias merge
+! ------------------------------------------------------------------------------
+
+
+! general settings
+URxvt.saveLines:        50000
+URxvt.termName:         xterm-256color
+URxvt.urgentOnBell:     false
+URxvt.visualBell:       false
+URxvt.iso14755:         false
+URxvt.iso14755_52:      false
+URxvt.meta8:            false
+URxvt.metaSendsEscape:  true
+URxvt.urlLauncher:      firefox
+URxvt.underlineURLs:    true
+URxvt.urlButton:        1
+
+! appearance
+URxvt.geometry: 		100x30
+URxvt.depth:             32
+!URxvt.transparent:      true
+URxvt.shading:           80
+URxvt.underlineColor:    #4682B4
+URxvt.highlightColor:    #666666
+URxvt.throughColor:      #4682B4
+URxvt.scrollBar:         false
+URxvt.scrollTtyOutput:   false
+URxvt.scrollWithBuffer:  true
+URxvt.scrollTtyKeypress: true
+URxvt.internalBorder:    10
+URxvt.externalBorder:    0
+URxvt.colorIT:      	 #4682B4
+URxvt.colorBD:      	 #F9F9F9
+URxvt.colorUL:      	 #87afd7
+
+
+*.cursorColor:  #c8c8c8
+
+! special
+URxvt.foreground: #DADAE8
+URxvt.background: #1E1E29
+URxvt.cursorColor: #B1E3AD
+
+! black
+URxvt.color0: #6E6C7E
+URxvt.color8: #6E6C7E
+
+! red
+URxvt.color1: #E38C8F
+URxvt.color9: #E38C8F
+
+! green
+URxvt.color2: #B1E3AD
+URxvt.color10: #B1E3AD
+
+! yellow
+URxvt.color3: #EBDDAA
+URxvt.color11: #EBDDAA
+
+! blue
+URxvt.color4: #A4B9EF
+URxvt.color12: #A4B9EF
+
+! magenta
+URxvt.color5: #C6AAE8
+URxvt.color13: #C6AAE8
+
+! cyan
+URxvt.color6: #E5B4E2
+URxvt.color14: #E5B4E2
+
+! white
+URxvt.color7: #DADAE8
+URxvt.color15: #DADAE8
+
+!!! end
+!!! get your color schemes from here
+!!! https://terminal.sexy/
+!!! copy/paste colorcodes in
+
+! fonts
+URxvt.letterSpace: 	    		-1
+URxvt.font:                 	xft:Monospace:regular:size=11
+URxvt.imFont:               	xft:Monospace:regular:size=11
+URxvt.italicFont:           	xft:Monospace:italic:size=11
+URxvt.boldFont:             	xft:Monospace:bold:size=11
+URxvt.boldItalicFont:     		xft:Monospace:regular:size=11
+! run :.!fc-list | grep <font-name>
+
+! perl extensions
+! You can install extra perl extensions you should add them here
+URxvt.perl-ext-common:  default,clipboard,url-select,keyboard-select,fullscreen,resize-font
+!URxvt.perl-ext-common:  default,clipboard,url-select,keyboard-select,tabbed
+
+! macros for resize-font - sudo pacman -S urxvt-resize-font-git
+URxvt.resize-font.step:   1
+URxvt.keysym.C-minus:     resize-font:smaller
+URxvt.keysym.C-plus:      resize-font:bigger
+URxvt.keysym.C-equal:     resize-font:reset
+URxvt.keysym.C-question:  resize-font:show
+URxvt.keysym.C-Down:      resize-font:smaller
+URxvt.keysym.C-Up:        resize-font:bigger
+
+! macros for clipboard and selection
+URxvt.copyCommand:      xclip -i -selection clipboard
+URxvt.pasteCommand:     xclip -o -selection clipboard
+URxvt.keysym.M-c:       perl:clipboard:copy
+URxvt.keysym.m-v:       perl:clipboard:paste
+URxvt.keysym.M-C-v:     perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape:  perl:keyboard-select:activate
+URxvt.keysym.M-s:       perl:keyboard-select:search
+URxvt.keysym.M-u:       perl:url-select:select_next
+
+! fullscreen - sudo pacman -S urxvt-fullscreen
+urxvt.keysym.F11:       perl:fullscreen:switch
+
+! tabbed
+URxvt.tabbed.tabbar-fg: 4
+URxvt.tabbed.tabbar-bg: 16
+URxvt.tabbed.tab-fg:    15
+URxvt.tabbed.tab-bg:    4
+URxvt.buffered:         false
+
+! clipboard
+URxvt.keysym.Control-Shift-C: perl:clipboard:copy
+URxvt.keysym.Control-Shift-V: perl:clipboard:paste

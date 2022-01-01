@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Update pacman DBs
+sudo pacman -Syy
+
+# Update system
+sudo pacman -Syu
+
+# Change shell to zsh
+csh -s /usr/bin/zsh $USER
+
+# Check internet conenction
+if ping -q -c 1 -W 1 google.com >/dev/null; then
+    echo "The network is up"
+else
+    # Configure network
+    nmtui
+fi
+
+# Install catppuccin LeftWM theme
+if ping -q -c 1 -W 1 google.com >/dev/null; then
+    cd ~/.config/leftwm/themes
+    git clone https://github.com/di-effe/catppuccin
+    rm current
+    ln -s catppuccin current
+    cp catppuccin/config.toml ../
+    leftwm-command SoftReload
+fi
+

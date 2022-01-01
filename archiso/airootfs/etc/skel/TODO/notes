@@ -1,0 +1,6 @@
+- sudo pacman -Syy
+- sudo pacman -Syu
+- xrdb -merge ~/.Xresources
+- nvim -> :PackerInstall
+- Switch to zsh
+- Change leftwm theme
